@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.exam1.dao.ActorMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+    <resultMap id="BaseResultMap" type="com.wx.exam1.domain.Actor">
+        <!--演员信息-->
+        <id column="actor_id" property="actor_id" jdbcType="INTEGER"/>
+        <id column="first_name" property="first_name" jdbcType="VARCHAR"/>
+        <id column="last_name" property="last_name" jdbcType="VARCHAR"/>
+        <id column="language_id" property="last_update" jdbcType="INTEGER"/>
+    </resultMap>
+    <!--查询演员的信息关联到电影-->
+    <resultMap id="findActorAndFilm" type="com.wx.exam1.domain.Actor" extends="BaseResultMap">
+        <!--一个演员对应多个电影-->
+        <collection property="filmList"
+                    ofType="com.wx.exam1.domain.Film"
+                    column="actor_id"
+                    select="findFilmByCid">
+        </collection>
+    </resultMap>
+    
+    <select id="findActorAndFilm" resultMap="findActorAndFilm" parameterType="com.wx.exam1.domain.Actor">
+        SELECT * FROM actor WHERE actor_id=#{actor_id}
+    </select>
+    <resultMap id="FimlBaseResultMap" type="com.wx.exam1.domain.Film">
+        <id column="film_id" property="film_id" jdbcType="INTEGER"/>
+        <id column="title" property="title" jdbcType="VARCHAR"/>
+        <id column="description" property="description" jdbcType="VARCHAR"/>
+        <id column="language_id" property="language_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="findFilmByCid" resultMap="FimlBaseResultMap" >
+        SELECT f.*
+        FROM
+        film f
+        JOIN film_actor b
+        ON b.film_id= f.film_id
+        <where>
+            <if test="actor_id!=null and actor_id!=''">
+                b.actor_id=#{actor_id}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

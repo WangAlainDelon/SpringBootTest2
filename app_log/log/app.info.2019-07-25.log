@@ -1,0 +1,25 @@
+2019-07-25 23:23:06.455 INFO [restartedMain]com.wx.exam1.Exam1Application.logStarting:50 -Starting Exam1Application on LAPTOP-CTHANLP5 with PID 20164 (D:\IDEA\SpringBootTest2\exam1\target\classes started by wangxiang in D:\IDEA\SpringBootTest2)
+2019-07-25 23:23:06.459 INFO [restartedMain]com.wx.exam1.Exam1Application.logStartupProfileInfo:650 -The following profiles are active: prod
+2019-07-25 23:23:06.497 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-25 23:23:06.497 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-25 23:23:07.124 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'actorMapper' and 'com.wx.exam1.dao.ActorMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'addressMapper' and 'com.wx.exam1.dao.AddressMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'categoryMapper' and 'com.wx.exam1.dao.CategoryMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'cityMapper' and 'com.wx.exam1.dao.CityMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'countryMapper' and 'com.wx.exam1.dao.CountryMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'customerMapper' and 'com.wx.exam1.dao.CustomerMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'filmMapper' and 'com.wx.exam1.dao.FilmMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate:239 -Skipping MapperFactoryBean with name 'userMapper' and 'com.wx.exam1.dao.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-25 23:23:07.125 WARN [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.doScan:166 -No MyBatis mapper was found in '[com.wx.exam1]' package. Please check your configuration.
+2019-07-25 23:23:07.731 WARN [restartedMain]io.undertow.websockets.jsr.handleDeployment:68 -UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-07-25 23:23:07.753 INFO [restartedMain]io.undertow.servlet.log:364 -Initializing Spring embedded WebApplicationContext
+2019-07-25 23:23:07.753 INFO [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:283 -Root WebApplicationContext: initialization completed in 1254 ms
+2019-07-25 23:23:08.335 INFO [restartedMain]tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60 -Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2019-07-25 23:23:08.336 INFO [restartedMain]tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60 -Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2019-07-25 23:23:08.336 INFO [restartedMain]tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60 -Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2019-07-25 23:23:08.336 INFO [restartedMain]tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83 -Clear EntityHelper entityTableMap cache.
+2019-07-25 23:23:08.536 INFO [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:57 -LiveReload server is running on port 35729
+2019-07-25 23:23:08.573 INFO [restartedMain]org.xnio.<clinit>:104 -XNIO version 3.3.8.Final
+2019-07-25 23:23:08.583 INFO [restartedMain]org.xnio.nio.<clinit>:55 -XNIO NIO Implementation Version 3.3.8.Final
+2019-07-25 23:23:08.631 INFO [restartedMain]o.s.boot.web.embedded.undertow.UndertowServletWebServer.start:144 -Undertow started on port(s) 8080 (http) with context path ''
+2019-07-25 23:23:08.635 INFO [restartedMain]com.wx.exam1.Exam1Application.logStarted:59 -Started Exam1Application in 2.611 seconds (JVM running for 4.909)

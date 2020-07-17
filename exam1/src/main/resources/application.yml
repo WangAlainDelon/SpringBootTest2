@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  undertow:
+    io-threads: 4
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+  error:
+        path: /error
+spring:
+  thymeleaf:
+    suffix: .html
+    cache: false
+    encoding: UTF-8
+    prefix:  classpath:/templates/
+  profiles:
+        active: prod
+  aop:
+    auto: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sakila?characterEncoding=utf8
+    username: root
+    password: 133309
+mybatis:
+  mapper-locations: classpath:mapper/*
+  type-aliases-package: com.wx.exam1.domain.*
+  config-location: classpath:mybatis-config.xml
+mapper:
+  mappers: com.wx.exam1.utils.MapperUtil
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+
+
+
+
+
+
+
+

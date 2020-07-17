@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.exam1.dao.CategoryMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+    <resultMap id="BaseResultMap" type="com.wx.exam1.domain.Category">
+        <!--电影类别表的信息-->
+        <id column="category_id" property="category_id" jdbcType="INTEGER"/>
+        <id column="name" property="name" jdbcType="VARCHAR"/>
+        <id column="last_update" property="last_update" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!--查询电影类别，关联电影，关联演员的信息,如果采用嵌套查询Mybatis最多支持两层的嵌套，第三层的时候会装配不到值-->
+    <resultMap id="findCategoryAndActor" type="com.wx.exam1.domain.Category" extends="BaseResultMap">
+        <!--一个电影类别对应多个电影-->
+        <collection property="films" ofType="com.wx.exam1.domain.Film">
+            <id column="film_id" property="film_id" jdbcType="INTEGER"/>
+            <id column="title" property="title" jdbcType="VARCHAR"/>
+            <id column="description" property="description" jdbcType="VARCHAR"/>
+            <id column="language_id" property="language_id" jdbcType="INTEGER"/>
+            <!--一个电影对应多个演员-->
+            <collection property="actors" ofType="com.wx.exam1.domain.Actor">
+                <id column="actor_id" property="actor_id" jdbcType="INTEGER"/>
+                <id column="first_name" property="first_name" jdbcType="VARCHAR"/>
+                <id column="last_name" property="last_name" jdbcType="VARCHAR"/>
+            </collection>
+
+        </collection>
+    </resultMap>
+
+    <select id="findCatagoryAndFimlAndAcor" resultMap="findCategoryAndActor" parameterType="com.wx.exam1.domain.Category">
+        SELECT  a.*,
+        c.film_id,
+        c.title,c.
+        description,
+        c.language_id,
+        e.actor_id,
+        e.first_name,
+        e.last_name
+        FROM category a
+        JOIN film_category b
+        ON  a.category_id=b.category_id
+        JOIN film c
+        ON b.film_id=c.film_id
+        JOIN film_actor d
+        ON c.film_id=d.film_id
+        JOIN actor e
+        ON d.actor_id=e.actor_id
+        WHERE a.category_id=#{category_id}
+    </select>
+
+
+</mapper>

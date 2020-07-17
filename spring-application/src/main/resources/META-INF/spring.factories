@@ -1,0 +1,15 @@
+# 加载上下文初始化器
+org.springframework.context.ApplicationContextInitializer=\
+com.wx.springapplication.autoconfigure.AfterApplicationContextInitializer,\
+com.wx.springapplication.autoconfigure.HelloWorldApplicationContextInitializer
+
+# 加载应用事件监听
+org.springframework.context.ApplicationListener=\
+com.wx.springapplication.listener.HelloWorldCloseApplicationListener,\
+com.wx.springapplication.listener.HelloWorldRefeshAfterApplicationListener,\
+com.wx.springapplication.listener.HelloWorldRefeshApplicationListener,\
+com.wx.springapplication.listener.BeforeConfigFileApplicationListener
+
+# 加载SpringAppication的运行监听器Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.wx.springapplication.run.HelloWorldSpringApplicationRunListener

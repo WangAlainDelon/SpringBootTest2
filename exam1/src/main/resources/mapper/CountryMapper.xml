@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.exam1.dao.CountryMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+    <resultMap id="BaseResultMap" type="com.wx.exam1.domain.Country">
+        <id column="country_id" property="country_id" jdbcType="INTEGER"/>
+        <result column="country" property="country" jdbcType="VARCHAR"/>
+        <result column="d_lastUpdate" property="lastUpdate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <resultMap type="com.wx.exam1.domain.Country" id="CountryAndCityResultMap" extends="BaseResultMap" >
+        <collection property="cities" ofType="com.wx.exam1.domain.City">
+            <id column="city_id" property="city_id" jdbcType="INTEGER"/>
+            <result column="city" property="city" jdbcType="VARCHAR"/>
+            <result column="country_id" property="country_id" jdbcType="INTEGER"/>
+            <result column="c_lastUpdate" property="last_update" jdbcType="TIMESTAMP"/>
+        </collection>
+    </resultMap>
+
+    <!--查询一个城市所对应的国家的信息，这是一个一对多的关系-->
+    <select id="findCountryAndCity" resultMap="CountryAndCityResultMap" parameterType="com.wx.exam1.domain.Country">
+        SELECT  c.city_id,
+        c.city,
+        c.country_id,
+        c.last_update AS c_lastUpdate,
+        d.country ,
+        d.last_update AS d_lastUpdate
+        FROM
+        city c , country d
+        WHERE c.country_id=d.country_id
+        AND d.country_id=#{country_id}
+    </select>
+</mapper>
